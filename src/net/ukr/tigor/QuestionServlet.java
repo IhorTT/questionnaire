@@ -46,15 +46,4 @@ public class QuestionServlet extends HttpServlet {
         }
         resp.sendRedirect("index.jsp");
     }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        String a = request.getParameter("a");
-        HttpSession session = request.getSession(false);
-
-        if ("exit".equals(a) && (session != null)) {
-            session.removeAttribute("respondent");
-        }
-
-        response.sendRedirect("index.jsp");
-    }
 }
